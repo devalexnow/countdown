@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 html {
   box-sizing: border-box;
@@ -10,7 +10,7 @@ body {
   overflow-y: hidden;
   display: flex;
   align-items: center;
-
+  font-family: Quicksand, sans-serif;
 }
 
 /* Video Background */
@@ -83,7 +83,7 @@ input {
   border-radius: 20px;
   background: #fff;
   outline: none;
-
+  font-family: Quicksand, sans-serif;
 }
 
 /* Button */
@@ -93,14 +93,17 @@ button {
   border-radius: 20px;
   margin-top: 15px;
   border: none;
-  text-transform: uppercase;
+  font-size: 18px;
+  /* text-transform: uppercase; */
   background: #006959;
   color: white;
   cursor: pointer;
   outline: none;
 }
 
-
+button:hover {
+  filter: brightness(110%);
+}
 
 /* Countdown */
 ul {
@@ -108,7 +111,7 @@ ul {
 }
 
 li {
-
+  display: inline-block;
   font-size: 30px;
   list-style-type: none;
   padding: 10px;
@@ -126,6 +129,34 @@ li span {
   position: relative;
   top: 60px;
 }
+
+.complete-title {
+  animation: complete 4s infinite;
+}
+
+@keyframes complete {
+  0% {
+    color: rgb(212, 25, 25)
+  }
+  
+  25% {
+    color: rgb(212, 219, 12)
+  }
+
+  50% {
+    color: rgb(3, 168, 11);
+    transform: scale(1.5);
+  }
+
+  75% {
+    color: rgb(47, 105, 205)
+  }
+
+  100% {
+    color: rgb(157, 60, 217)
+  }
+}
+
 
 
 /* Media Query: Large Smartphone (Vertical) */

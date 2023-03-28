@@ -23,10 +23,26 @@
                 <label for="title">Tytuł</label>
                 <input type="text" id="title" placeholder="Co odliczasz?">
                 <label for="date">Wybierz datę</label>
-                <input type="date" class="data-picker">
+                <input type="date" id="date-picker">
                 <button type="submit">Wygeneruj licznik</button>
-
             </form>
+        </div>
+        <!-- Countdown -->
+        <div class="countdown" id="countdown" hidden>
+            <h1 id="countdown-title">Tu będzie tytuł licznika</h1>
+            <ul>
+                <li><span>3</span>dni</li>
+                <li><span>6</span>godziny</li>
+                <li><span>23</span>minuty</li>
+                <li><span>36</span>sekundy</li>
+            </ul>
+            <button id="countdown-button">Resetuj</button>
+        </div>
+        <!-- Complete -->
+        <div class="complete" id="complete" hidden>
+            <h1 class="complete-title">Odliczanie zakończone!</h1>
+            <h1 id="complete-info">Odliczanie zakończone 28-03-2023</h1>
+            <button id="complete-button">Nowe odliczanie</button>
         </div>
     </div>
     <!-- Script -->
