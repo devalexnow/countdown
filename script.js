@@ -1,6 +1,7 @@
 const inputContainer = document.getElementById('input-container');
 const countdownForm = document.getElementById('countdownForm');
 const dateEl = document.getElementById('date-picker');
+const container = document.getElementById('container');
 
 const countdownEl = document.getElementById('countdown');
 const countdownElTitle = document.getElementById('countdown-title');
@@ -13,7 +14,7 @@ const completeBtn = document.getElementById('complete-button');
 
 let countdownTitle = '';
 let countdownDate = '';
-let countdownValue = Date;
+let countdownValue = new Date();
 let countdownActive;
 let savedCountdown;
 
@@ -21,6 +22,16 @@ const second = 1000;
 const minute = second * 60;
 const hour = minute * 60;
 const day = hour * 24;
+
+function showLoadingSpinner() {
+    loader.hidden = false; //loader będzie widoczny
+    countdownEl.hidden = true; //licznik będzie schowany
+}
+
+function removeLoadingSpinner() {
+    countdownEl.hidden = false; //licznik będzie widoczny
+    loader.hidden = true; //loader będzie schowany
+}
 
 // Set Date Input Min with Today's Date
 const today = new Date().toISOString().split('T')[0];
@@ -54,6 +65,7 @@ function updateDOM() {
             timeElements[3].textContent = `${seconds}`;
             completeEl.hidden = true;
             countdownEl.hidden = false;
+            removeLoadingSpinner()
         }
     }, second);
 }
@@ -90,14 +102,16 @@ function reset() {
 }
 
 function restorePreviousCountdown() {
+    
     if(localStorage.getItem('countdown')) {
+        showLoadingSpinner();
         inputContainer.hidden = true;
         savedCountdown = JSON.parse(localStorage.getItem('countdown'));
         countdownTitle = savedCountdown.title;
         countdownDate = savedCountdown.date;
         countdownValue = new Date(countdownDate).getTime();
         updateDOM();
-    }
+    }   
 }
 
 // Event listener
@@ -106,4 +120,9 @@ countdownBtn.addEventListener('click', reset);
 completeBtn.addEventListener('click', reset)
 
 //On load, check local storage
+// showLoadingSpinner();
 restorePreviousCountdown();
+
+
+
+
