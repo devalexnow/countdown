@@ -18,31 +18,31 @@
     <div class="container" id="container">
         <!-- input -->
         <div class="input-container" id="input-container">
-            <h1>Stwórz swój licznik!</h1>
+            <h1>Create your Countdown!</h1>
             <form class="form" id="countdownForm">
-                <label for="title">Tytuł</label>
+                <label for="title">Title</label>
                 <input type="text" id="title" placeholder="Co odliczasz?">
-                <label for="date">Wybierz datę</label>
+                <label for="date">Select the date</label>
                 <input type="date" id="date-picker">
-                <button type="submit">Wygeneruj licznik</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
         <!-- Countdown -->
         <div class="countdown" id="countdown" hidden>
             <h1 id="countdown-title"></h1>
             <ul>
-                <li><span></span>dni</li>
-                <li><span></span>godziny</li>
-                <li><span></span>minuty</li>
-                <li><span></span>sekundy</li>
+                <li><span></span>days</li>
+                <li><span></span>hours</li>
+                <li><span></span>minutes</li>
+                <li><span></span>seconds</li>
             </ul>
-            <button id="countdown-button">Resetuj</button>
+            <button id="countdown-button">Reset</button>
         </div>
         <!-- Complete -->
         <div class="complete" id="complete" hidden>
-            <h1 class="complete-title">Odliczanie zakończone!</h1>
+            <h1 class="complete-title">Countdown Complete!</h1>
             <h1 id="complete-info"></h1>
-            <button id="complete-button">Nowe odliczanie</button>
+            <button id="complete-button">New Countdown</button>
         </div>
     <!-- Loader -->
     <div class="loader" id="loader" hidden></div>

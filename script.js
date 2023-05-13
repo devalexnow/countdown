@@ -55,7 +55,7 @@ function updateDOM() {
         if (distance < 0) {
             countdownEl.hidden = true;
             clearInterval(countdownActive);
-            completeElInfo.textContent = `${countdownTitle} zakończone ${countdownDate}`;
+            completeElInfo.textContent = `${countdownTitle} finished on ${countdownDate}`;
             completeEl.hidden = false;
         } else {
             countdownElTitle.textContent = `${countdownTitle}`;
@@ -82,7 +82,7 @@ function updateCountdown(e) {
     localStorage.setItem('countdown', JSON.stringify(savedCountdown));
     //Check for valid date
     if (countdownDate === '') {
-        alert('Wybierz datę')
+        alert('Select a date for the countdown')
     } else {
     //Get number version of current Date, update DOM
     countdownValue = new Date(countdownDate).getTime();
@@ -110,7 +110,7 @@ function restorePreviousCountdown() {
         countdownTitle = savedCountdown.title;
         countdownDate = savedCountdown.date;
         countdownValue = new Date(countdownDate).getTime();
-        updateDOM();
+        updateDOM(); 
     }   
 }
 
