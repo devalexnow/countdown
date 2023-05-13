@@ -18,4 +18,4 @@ The cool thing about this project is that it **stores the countdown information 
 Of course, you also have the option to reset the countdown.
 When the countdown is over, it **shows „Countdown Complete!" text animation**, the title of the countdown, and the date that it finished. There is also a button „New countdown".
 
-This mechanism **can be implemeted** for example in online advert to count to the end of the offer.
+This mechanism **can be implemented,** for example, in an online advertisement to count down to the end of the offer.
